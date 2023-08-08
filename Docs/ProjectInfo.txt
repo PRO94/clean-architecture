@@ -1,0 +1,8 @@
+What are we building & why?
+
+• What?
+	• Apartment booking system
+• Why?
+	• Familiar, easy to understand
+	• Not trivial, interesting business rules and logic
+	• Doesn't require extensive domain knowledge
