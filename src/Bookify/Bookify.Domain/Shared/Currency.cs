@@ -1,4 +1,4 @@
-﻿namespace Bookify.Domain.Apartments;
+﻿namespace Bookify.Domain.Shared;
 
 public record Currency
 {
@@ -15,10 +15,10 @@ public record Currency
         return All.FirstOrDefault(c => c.Code == code.ToUpper())
             ?? throw new ApplicationException($"The currency code ({code}) is invalid");
     }
-    
-    public static readonly IReadOnlyCollection<Currency> All = new[] 
-    { 
-        Usd, 
-        Eur 
+
+    public static readonly IReadOnlyCollection<Currency> All = new[]
+    {
+        Usd,
+        Eur
     };
 }
