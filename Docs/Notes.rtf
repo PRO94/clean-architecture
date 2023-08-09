@@ -23118,11 +23118,15 @@ ffffffffffffffffffffffff0000030000000000
 \f1\bullet\f0  Complex business logic\par
 \f1\bullet\f0  Highly testable projects\par
 \f1\bullet\f0  Want architecture to enforce design policies\par
+___________________________________________________________________________\par
+
+\pard\sa200\sl240\slmult1\qc\b\fs32 LAYERS\par
+What should they contain? \par
+What should they be responsible for?\par
 \par
+\fs28 Domain Layer\par
 
-\pard\sa200\sl240\slmult1\qc\b Domain Layer\par
-
-\pard\sa200\sl240\slmult1\qj\f1\bullet\f0  \b0 Entities\b\par
+\pard\sa200\sl240\slmult1\qj\f1\fs22\bullet\f0  \b0 Entities\b\par
 \b0\f1\bullet\f0  Value objects\par
 \f1\bullet\f0  Damian events\par
 \f1\bullet\f0  Domain services\par
@@ -23131,9 +23135,9 @@ ffffffffffffffffffffffff0000030000000000
 \f1\bullet\f0  Enums\par
 \par
 
-\pard\sa200\sl240\slmult1\qc\b Application Layer\par
+\pard\sa200\sl240\slmult1\qc\b\fs28 Application Layer\par
 
-\pard\sa200\sl240\slmult1\qj\b0\f1\bullet\f0  Orchestates the Domain\par
+\pard\sa200\sl240\slmult1\qj\b0\f1\fs22\bullet\f0  Orchestates the Domain\par
 \f1\bullet\f0  Contains business logic\par
 \f1\bullet\f0  Defines the Use Cases\par
 \tab\f1\bullet\f0  Application services\par
@@ -23145,27 +23149,7 @@ ffffffffffffffffffffffff0000030000000000
 \f1\bullet\f0  DI configuration\par
 \par
 
-\pard\sa200\sl240\slmult1\qc\b Infrastructure Layer\par
-
-\pard\sa200\sl240\slmult1\qj\b0\f1\bullet\f0  External systems\par
-\tab\f1\bullet\f0  Databases\par
-\tab\f1\bullet\f0  Messaging\par
-\tab\f1\bullet\f0  Email providers \par
-\tab\f1\bullet\f0  Storage services\par
-\tab\f1\bullet\f0  Identity\par
-\tab\f1\bullet\f0  System clock\par
-\par
-
-\pard\sa200\sl240\slmult1\qc\b Presentation Layer\par
-
-\pard\sa200\sl240\slmult1\qj\b0\f1\bullet\f0  Defines the entry point to the system\par
-\f1\bullet\f0  REST API built with .NET7\par
-\tab\f1\bullet\f0  API endpoint\par
-\tab\f1\bullet\f0  Middleware\par
-\b\tab\b0\f1\bullet\f0  DI setup\par
-\par
-
-\pard\sa200\sl240\slmult1\qc\b Benefits of CQRS:\b0\par
+\pard\sa200\sl240\slmult1\b Benefits of CQRS usage in Application layer:\b0\par
 
 \pard\sa200\sl240\slmult1\qj\b Pros:\par
 \b0\f1\bullet\f0  Single responsibility principle\par
@@ -23176,7 +23160,18 @@ ffffffffffffffffffffffff0000030000000000
 \f1\lang9\bullet\f0  Indirection\b\par
 \b0\par
 
-\pard\sa200\sl240\slmult1\qc\b Infrastructure Layer\b0\par
+\pard\sa200\sl240\slmult1\qc\b\fs28 Infrastructure Layer\par
+
+\pard\sa200\sl240\slmult1\qj\b0\f1\fs22\bullet\f0  External systems\par
+\tab\f1\bullet\f0  Databases\par
+\tab\f1\bullet\f0  Messaging\par
+\tab\f1\bullet\f0  Email providers \par
+\tab\f1\bullet\f0  Storage services\par
+\tab\f1\bullet\f0  Identity\par
+\tab\f1\bullet\f0  System clock\par
+\par
+
+\pard\sa200\sl240\slmult1\b Infrastructure Layer should contains:\b0\par
 
 \pard\sa200\sl240\slmult1\qj\f1\bullet\f0  EF Core\par
 \lang1033\tab\f1\bullet\f0  DbContext\par
@@ -23184,6 +23179,24 @@ ffffffffffffffffffffffff0000030000000000
 \tab\f1\bullet\f0  Repositories\par
 \f1\bullet\f0  Optimistic concurrency\par
 \f1\bullet\f0  Publishing Domain events\lang9\par
+\par
+
+\pard\sa200\sl240\slmult1\qc\b\fs28 Presentation Layer\par
+
+\pard\sa200\sl240\slmult1\qj\b0\f1\fs22\bullet\f0  Defines the entry point to the system\par
+\f1\bullet\f0  REST API built with .NET7\par
+\tab\f1\bullet\f0  API endpoint\par
+\tab\f1\bullet\f0  Middleware\par
+\b\tab\b0\f1\bullet\f0  DI setup\par
+\par
+
+\pard\sa200\sl240\slmult1\qc\b\fs28 Presentation Layer\par
+
+\pard\sa200\sl240\slmult1\qj\b0\f1\fs22\bullet\f0  Web API, .NET 7\par
+\f1\bullet\f0  Controllers\par
+\f1\bullet\f0  Middleware\par
+\f1\bullet\f0  DI setup\par
+\f1\bullet\f0  Docker Compose\par
 \par
 \par
 \b\par
