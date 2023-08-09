@@ -34,5 +34,9 @@ internal sealed class ApartmentConfiguration : IEntityTypeConfiguration<Apartmen
             priceBuilder.Property(money => money.Currency)
                 .HasConversion(currency => currency.Code, code => Currency.FromCode(code));
         });
+
+        // system column
+        // the db shadow property is using for the implementation of optimistic concurrency support
+        builder.Property<uint>("Version").IsRowVersion();
     }
 }
