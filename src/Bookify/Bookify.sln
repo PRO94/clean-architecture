@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookify.Domain", "Bookify.Domain\Bookify.Domain.csproj", "{DD7B0727-EBE7-440D-AAF1-C2CEB9B4351B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookify.Domain", "Bookify.Domain\Bookify.Domain.csproj", "{DD7B0727-EBE7-440D-AAF1-C2CEB9B4351B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D8CD0211-85C5-47FA-9AA3-F45EF6241753}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{929BC6AC-08E4-4D9E-B165-AE78B58EC175}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookify.Application", "Bookify.Application\Bookify.Application.csproj", "{D47EC712-9B1F-4E3D-9FFF-C6FA26C17DD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookify.Application", "Bookify.Application\Bookify.Application.csproj", "{D47EC712-9B1F-4E3D-9FFF-C6FA26C17DD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookify.Infrastructure", "Bookify.Infrastructure\Bookify.Infrastructure.csproj", "{2DE3C5F3-A365-4D68-A12E-05488EE1884D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{D47EC712-9B1F-4E3D-9FFF-C6FA26C17DD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D47EC712-9B1F-4E3D-9FFF-C6FA26C17DD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D47EC712-9B1F-4E3D-9FFF-C6FA26C17DD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DE3C5F3-A365-4D68-A12E-05488EE1884D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DE3C5F3-A365-4D68-A12E-05488EE1884D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DE3C5F3-A365-4D68-A12E-05488EE1884D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DE3C5F3-A365-4D68-A12E-05488EE1884D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{DD7B0727-EBE7-440D-AAF1-C2CEB9B4351B} = {D8CD0211-85C5-47FA-9AA3-F45EF6241753}
 		{D47EC712-9B1F-4E3D-9FFF-C6FA26C17DD6} = {D8CD0211-85C5-47FA-9AA3-F45EF6241753}
+		{2DE3C5F3-A365-4D68-A12E-05488EE1884D} = {D8CD0211-85C5-47FA-9AA3-F45EF6241753}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {653F8442-435F-4A57-A984-29FF4188D043}
