@@ -18,7 +18,7 @@ internal sealed class UserConfiguration : IEntityTypeConfiguration<User>
 
         builder.Property(user => user.LastName)
             .HasMaxLength(200)
-            .HasConversion(lastName => lastName.Value, value => new LastName(value));
+            .HasConversion(firstName => firstName.Value, value => new LastName(value));
 
         builder.Property(user => user.Email)
             .HasMaxLength(400)

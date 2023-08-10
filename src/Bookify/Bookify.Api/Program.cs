@@ -20,6 +20,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 
     app.ApplyMigrations();
+
+    // Apply only once when the Db is empty. After that need to comment it out
+    //app.SeedData();
 }
 
 app.UseHttpsRedirection();

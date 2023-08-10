@@ -26,17 +26,18 @@ internal sealed class GetBookingQueryHandler : IQueryHandler<GetBookingQuery, Bo
                 status AS Status,
                 price_for_period_amount AS PriceAmount,
                 price_for_period_currency AS PriceCurrency,
-                clearing_fee_amount AS ClearingFeeAmount,
-                clearing_fee_currency AS ClearingFeeCurrency,
+                cleaning_fee_amount AS CleaningFeeAmount,
+                cleaning_fee_currency AS CleaningFeeCurrency,
                 amenities_up_charge_amount AS AmenitiesUpChargeAmount,
-                ameneties_up_charge_currency AS AmenitiesUpChargeCurrency,
+                amenities_up_charge_currency AS AmenitiesUpChargeCurrency,
+                total_price_amount AS TotalPriceAmount,
+                total_price_currency AS TotalPriceCurrency,
                 duration_start AS DurationStart,
                 duration_end AS DurationEnd,
                 created_on_utc AS CreatedOnUtc
             FROM bookings
             WHERE id = @BookingId
             """;
-
         var booking = await connection.QueryFirstOrDefaultAsync<BookingResponse>(
             sql,
             new

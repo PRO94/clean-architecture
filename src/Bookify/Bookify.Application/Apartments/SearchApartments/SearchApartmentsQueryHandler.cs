@@ -43,7 +43,7 @@ internal sealed class SearchApartmentsQueryHandler
                 a.address_zip_code AS ZipCode,
                 a.address_city AS City,
                 a.address_street AS Street
-            FROM apartment as a
+            FROM apartments AS a
             WHERE NOT EXISTS
             (
                 SELECT 1
@@ -52,7 +52,7 @@ internal sealed class SearchApartmentsQueryHandler
                     b.apartment_id = a.id AND
                     b.duration_start <= @EndDate AND
                     b.duration_end >= @StartDate AND
-                    b.Status = ANY(@ActiveBookingStatuses)
+                    b.status = ANY(@ActiveBookingStatuses)
             )
             """;
 
