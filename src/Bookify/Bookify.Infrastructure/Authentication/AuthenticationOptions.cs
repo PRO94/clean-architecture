@@ -6,7 +6,7 @@ public sealed class AuthenticationOptions
 
     public string MetadataUrl { get; init; } = string.Empty;
 
-    public bool ReqireHttpsMetadata { get; init; }
+    public bool RequireHttpsMetadata { get; init; }
 
     public string Issuer { get; set; } = string.Empty;
 }

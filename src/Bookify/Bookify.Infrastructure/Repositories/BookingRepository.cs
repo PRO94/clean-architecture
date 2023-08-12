@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Bookify.Infrastructure.Repositories;
 
-internal sealed class BookingsRepository : Repository<Booking>, IBookingRepository
+internal sealed class BookingRepository : Repository<Booking>, IBookingRepository
 {
     private static readonly BookingStatus[] ActiveBookingStatuses =
     {
@@ -13,7 +13,7 @@ internal sealed class BookingsRepository : Repository<Booking>, IBookingReposito
         BookingStatus.Completed
     };
 
-    public BookingsRepository(ApplicationDbContext dbContext) 
+    public BookingRepository(ApplicationDbContext dbContext) 
         : base(dbContext)
     {
     }

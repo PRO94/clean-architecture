@@ -1,20 +1,14 @@
 version: '3.4'
 
-networks:
-  deploy-guide-dev:
-    driver: bridge
-
 services:
   bookify.api:
-    image: ${DOCKER_REGISTRY-}bookifyapi-test-1793248650
+    image: ${DOCKER_REGISTRY-}bookifyapi
     container_name: Bookify.Api
     build:
       context: .
       dockerfile: Bookify.Api/Dockerfile
     depends_on:
       - bookify-db
-    networks:
-      - deploy-guide-dev
 
   bookify-db:
     image: postgres:latest
@@ -27,8 +21,6 @@ services:
       - postgres-data:/var/lib/postgresql/data
     ports:
       - 5433:5432
-    networks:
-      - deploy-guide-dev
 
   bookify-idp:
     image: jboss/keycloak:latest
