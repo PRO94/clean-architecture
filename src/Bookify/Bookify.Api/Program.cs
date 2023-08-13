@@ -1,4 +1,5 @@
 using Bookify.Api.Extensions;
+using Bookify.Api.MinimalApi.Endpoints.ApartmentReviews;
 using Bookify.Application;
 using Bookify.Infrastructure;
 
@@ -34,5 +35,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.MapReviewsEndpoints();
 
 app.Run();
