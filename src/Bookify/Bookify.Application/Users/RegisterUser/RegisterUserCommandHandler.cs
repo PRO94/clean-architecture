@@ -2,7 +2,6 @@
 using Bookify.Application.Abstractions.Messaging;
 using Bookify.Domain.Abstractions;
 using Bookify.Domain.Users;
-using MediatR;
 
 namespace Bookify.Application.Users.RegisterUser;
 
@@ -40,6 +39,6 @@ internal sealed class RegisterUserCommandHandler : ICommandHandler<RegisterUserC
 
         await _unitOfWork.SaveChangesAsync(cancellationToken);
 
-        return user.Id;
+        return user.Id.Value;
     }
 }

@@ -2,4 +2,4 @@
 
 namespace Bookify.Domain.Bookings.Events;
 
-public record BookingCompletedDomainEvent(Guid BookingId) : IDomainEvent;
+public record BookingCompletedDomainEvent(BookingId BookingId) : IDomainEvent;
