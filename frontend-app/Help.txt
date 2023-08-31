@@ -3,6 +3,9 @@ https://tailwindcss.com/docs/guides/angular
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init
 
+Fake api usage:
+https://fakestoreapi.com/docs
+
 Help info:
 install Node.js
 
