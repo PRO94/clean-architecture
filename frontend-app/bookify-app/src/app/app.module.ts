@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { ApartmentComponent } from './components/apartment/apartment.component';
 import { ProductComponent } from './components/product/product.component';
 import { HttpClientModule } from '@angular/common/http';
+import { GlobalErrorComponent } from './components/global-error/global-error.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ApartmentComponent,
-    ProductComponent
+    ProductComponent,
+    GlobalErrorComponent
   ],
   imports: [
     BrowserModule,
