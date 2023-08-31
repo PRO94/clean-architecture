@@ -22,7 +22,7 @@ Create a new Angular application:
 • ng new my-app
 
 Start the application:
-• ng start
+• ng serve
 
 Generage TestService without tests in the services folder, register it to the dependencies:
 • ng g s services/test --skip-tests
