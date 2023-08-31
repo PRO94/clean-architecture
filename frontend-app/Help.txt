@@ -1,0 +1,22 @@
+CSS (use commands in app folder):
+https://tailwindcss.com/docs/guides/angular
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init
+
+Help info:
+install Node.js
+
+• node -v
+
+• npm -v
+
+• npm install -g @angular/cli
+
+Check Angular CLI version
+• ng version
+
+Create a new Angular application:
+• ng new my-app
+
+Start the application:
+• ng start
