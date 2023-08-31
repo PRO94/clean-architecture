@@ -23,3 +23,9 @@ Create a new Angular application:
 
 Start the application:
 • ng start
+
+Generage TestService without tests in the services folder, register it to the dependencies:
+• ng g s services/test --skip-tests
+
+Generage FirstComponent without tests in the components folder, register it to the dependencies:
+• ng g c components/First --skip-tests
