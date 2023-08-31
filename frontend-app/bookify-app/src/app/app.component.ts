@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { IProduct } from './models/product';
 import { ProductService } from './services/products.service';
 import { Observable, tap } from 'rxjs';
 import { ModalService } from './services/modal.service';
@@ -11,23 +10,21 @@ import { ModalService } from './services/modal.service';
 })
 export class AppComponent implements OnInit {
   title = 'Bookify';
-  //products: IProduct[];
-  products$: Observable<IProduct[]>;
+  // products$: Observable<IProduct[]>;
   loading: boolean = false;
   searchPartProductName: string = '';
 
   constructor(
-    private productService: ProductService,
+    public productService: ProductService,
     public modalService: ModalService) { }
 
   ngOnInit(): void {
     this.loading = true;
-    this.products$ = this.productService.getAll().pipe(
-      tap(() => this.loading = false)
-    );
-    // this.productService.getAll().subscribe(products => {
-    //   this.products = products;
-    //   this.loading = false;
-    // });
+    // this.products$ = this.productService.getAll().pipe(
+    //   tap(() => this.loading = false)
+    // );
+    this.productService.getAll().subscribe(products => {
+      this.loading = false;
+    });
   }
 }

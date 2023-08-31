@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpErrorResponse, HttpParams } from "@angular/common/http"
 import { IProduct } from "../models/product";
-import { Observable, catchError, delay, retry, throwError } from "rxjs";
+import { Observable, catchError, delay, retry, tap, throwError } from "rxjs";
 import { ErrorService } from "./error.service";
 
 @Injectable({
@@ -12,6 +12,8 @@ export class ProductService {
         private httpClient: HttpClient,
         private errorService: ErrorService
     ) { }
+
+    products: IProduct[] = [];
 
     getAll(): Observable<IProduct[]> {
         //return this.httpClient.get<IProduct[]>('https://fakestoreapi.XYZcom/products', {   // only for testing global error handling - wrong url
@@ -24,8 +26,16 @@ export class ProductService {
         }).pipe(
             delay(250),
             retry(2),
+            tap(products => this.products = products),
             catchError(this.errorHandler.bind(this))
         );
+    }
+
+    create(product: IProduct): Observable<IProduct> {
+        return this.httpClient.post<IProduct>('https://fakestoreapi.com/products', product)
+            .pipe(
+                tap(product => this.products.push(product))
+            );
     }
 
     private errorHandler(error: HttpErrorResponse) {
