@@ -32,3 +32,6 @@ Generage FirstComponent without tests in the components folder, register it to t
 
 Generage FilterProductsPipe without tests in the pipes folder, register it to the dependencies:
 • ng g p pipes/filter-products --skip-tests
+
+Generage FocusDirective without tests in the directives folder, register it to the dependencies:
+• ng g d directives/focus --skip-tests
