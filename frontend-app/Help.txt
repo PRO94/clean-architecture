@@ -28,4 +28,7 @@ Generage TestService without tests in the services folder, register it to the de
 • ng g s services/test --skip-tests
 
 Generage FirstComponent without tests in the components folder, register it to the dependencies:
-• ng g c components/First --skip-tests
+• ng g c components/first --skip-tests
+
+Generage FilterProductsPipe without tests in the pipes folder, register it to the dependencies:
+• ng g p pipes/filter-products --skip-tests
