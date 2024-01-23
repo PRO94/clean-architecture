@@ -1,4 +1,5 @@
 ﻿using Bookify.Application.Abstractions.Authentication;
+using Bookify.Infrastructure.Authorization;
 using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
 
@@ -13,12 +14,17 @@ internal sealed class UserContext : IUserContext
         _httpContextAccessor = httpContextAccessor;
     }
 
+    public Guid UserId =>
+        _httpContextAccessor
+            .HttpContext?
+            .User
+            .GetUserId() ??
+        throw new ApplicationException("User context is unavailable.");
+
     public string IdentityId =>
         _httpContextAccessor
             .HttpContext?
             .User
-            .Claims
-            .SingleOrDefault(claim => claim.Type == ClaimTypes.NameIdentifier)?
-            .Value ??
+            .GetIdentityId() ??
         throw new ApplicationException("User context is unavailable.");
 }
