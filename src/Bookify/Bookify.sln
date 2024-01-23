@@ -17,11 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookify.Api", "Bookify.Api\
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{054D8DD3-A0B7-427A-AC6A-609145788851}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookify.Application.UnitTests", "..\test\Bookify.Application.UnitTests\Bookify.Application.UnitTests.csproj", "{F1053408-8328-4A0D-9A2F-810E8D90A291}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookify.Application.UnitTests", "..\test\Bookify.Application.UnitTests\Bookify.Application.UnitTests.csproj", "{F1053408-8328-4A0D-9A2F-810E8D90A291}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookify.Domain.UnitTests", "..\test\Bookify.Domain.UnitTests\Bookify.Domain.UnitTests.csproj", "{EF2A3982-57A5-42B8-8066-2C2609B10A4F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookify.Domain.UnitTests", "..\test\Bookify.Domain.UnitTests\Bookify.Domain.UnitTests.csproj", "{EF2A3982-57A5-42B8-8066-2C2609B10A4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookify.ArchitectureTests", "..\test\Bookify.ArchitectureTests\Bookify.ArchitectureTests.csproj", "{96A489B0-8E1B-4BBB-8757-385B4BA8FAF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookify.ArchitectureTests", "..\test\Bookify.ArchitectureTests\Bookify.ArchitectureTests.csproj", "{96A489B0-8E1B-4BBB-8757-385B4BA8FAF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
