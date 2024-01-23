@@ -8,12 +8,14 @@ using Bookify.Domain.Bookings;
 using Bookify.Domain.Reviews;
 using Bookify.Domain.Users;
 using Bookify.Infrastructure.Authentication;
+using Bookify.Infrastructure.Authorization;
 using Bookify.Infrastructure.Clock;
 using Bookify.Infrastructure.Data;
 using Bookify.Infrastructure.Email;
 using Bookify.Infrastructure.Outbox;
 using Bookify.Infrastructure.Repositories;
 using Dapper;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -38,6 +40,8 @@ public static class DependencyInjection
         AddAuthentication(services, configuration);
 
         AddBackgroundJobs(services, configuration);
+
+        AddAuthorization(services);
 
         return services;
     }
@@ -75,7 +79,7 @@ public static class DependencyInjection
             .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer();
 
-        services.Configure<AuthenticationOptions>(configuration.GetSection("Authentication"));
+        services.Configure<Authentication.AuthenticationOptions>(configuration.GetSection("Authentication"));
 
         services.ConfigureOptions<JwtBearerOptionsSetup>();
 
@@ -83,7 +87,9 @@ public static class DependencyInjection
 
         services.AddTransient<AdminAuthorizationDelegatingHandler>();
 
-        services.AddHttpClient<IAuthenticationService, AuthenticationService>((serviceProvider, httpClient) =>
+        services.AddHttpClient<
+            Application.Abstractions.Authentication.IAuthenticationService,
+            Authentication.AuthenticationService>((serviceProvider, httpClient) =>
         {
             var keycloakOptions = serviceProvider.GetRequiredService<IOptions<KeycloakOptions>>().Value;
             httpClient.BaseAddress = new Uri(keycloakOptions.AdminUrl);
@@ -110,5 +116,12 @@ public static class DependencyInjection
         services.AddQuartzHostedService(options => options.WaitForJobsToComplete = true);
 
         services.ConfigureOptions<ProcessOutboxMessagesJobSetup>();
+    }
+
+    private static void AddAuthorization(IServiceCollection services)
+    {
+        services.AddScoped<AuthorizationService>();
+
+        services.AddTransient<IClaimsTransformation, CustomClaimsTransformation>();
     }
 }
